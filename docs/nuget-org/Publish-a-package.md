@@ -1,17 +1,17 @@
 ---
 title: NuGet パッケージの公開方法
 description: NuGet パッケージを nuget.org やプライベート フィードに公開する方法と nuget.org でパッケージ所有権を管理する方法に関する詳細。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 05/18/2018
 ms.topic: conceptual
 ms.reviewer: anangaur
-ms.openlocfilehash: fe5625247dca51c10d82fffe82022c40a4716069
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 05a16d8bf609d727aba3ddbc42959a3deb97b24b
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237933"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901916"
 ---
 # <a name="publishing-packages"></a>パッケージを公開する
 
@@ -38,11 +38,9 @@ Nuget.org の場合、Microsoft アカウントでサインインする必要が
 
 1. nuget.org では、パッケージ名が使用可能かどうかが示されます。 使用できない場合、お使いのプロジェクトのパッケージ ID を変更し、リビルドしてから、アップロードをもう一度やり直してください。
 
-1. パッケージ名が使用可能な場合、nuget.org では、パッケージ マニフェストからメタデータを確認できる **[確認]** セクションを開きます。 いずれかのメタデータを変更するには、お使いのプロジェクト (プロジェクト ファイルまたは `.nuspec` ファイル) を編集し、リビルドし、パッケージを再作成して、もう一度アップロードします。
+1. パッケージ名が使用可能な場合、nuget.org では、パッケージ マニフェストからメタデータを確認できる **[確認]** セクションを開きます。 パッケージに [readme ファイル](/docs/nuget-org/package-readme-on-nuget-org.md)を含めた場合は、プレビューをチェックアウトし、すべてのコンテンツが正しくレンダリングされることを確認してください。 いずれかのメタデータを変更するには、お使いのプロジェクト (プロジェクト ファイルまたは `.nuspec` ファイル) を編集し、リビルドし、パッケージを再作成して、もう一度アップロードします。
 
-1. **[Import Documentation]\(ドキュメントのインポート\)** では、マークダウンを貼り付けて、URL でドキュメントを参照したり、ドキュメント ファイルをアップロードしたりできます。
-
-1. すべての情報が準備できたら、 **[送信]** ボタンを選択します。
+2. すべての情報が準備できたら、 **[送信]** ボタンを選択します。
 
 ### <a name="command-line"></a>コマンド ライン
 

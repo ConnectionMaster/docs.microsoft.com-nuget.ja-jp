@@ -1,16 +1,16 @@
 ---
 title: NuGet CLI の更新コマンド
 description: nuget.exe update コマンドのリファレンス
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 106c4027f03d8e8c1d19545b3ca9b6cd5263830e
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 5f244e4cf15ca7afa0e6318a8c20d464ff75bd8e
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236790"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323649"
 ---
 # <a name="update-command-nuget-cli"></a>update コマンド (NuGet CLI)
 
@@ -24,7 +24,7 @@ ms.locfileid: "93236790"
 
 このコマンドは、 *-self* フラグを使用して nuget.exe 自体を更新するためにも使用できます。
 
-## <a name="usage"></a>使用
+## <a name="usage"></a>使用方法
 
 ```cli
 nuget update <configPath> [options]
@@ -40,7 +40,7 @@ nuget update <configPath> [options]
   
 - **`-DependencyVersion [Lowest, HighestPatch, HighestMinor, Highest, Ignore]`**
 
-  使用する依存関係パッケージのバージョンを指定します。次のいずれかになります。<br/><ul><li>*最低* (既定): 最も低いバージョンです。</li><li>*HighestPatch* : 最も低いメジャー、最低のマイナー、最高のパッチを持つバージョン</li><li>*HighestMinor* : 最上位のメジャー、最高のマイナー、最高の修正プログラムが適用されたバージョン</li><li>*最高* : 最高バージョン</li><li>*無視* : 依存関係パッケージは使用されません</li></ul>
+  使用する依存関係パッケージのバージョンを指定します。次のいずれかになります。<br/><ul><li>*最低* (既定): 最も低いバージョンです。</li><li>*HighestPatch*: 最も低いメジャー、最低のマイナー、最高のパッチを持つバージョン</li><li>*HighestMinor*: 最上位のメジャー、最高のマイナー、最高の修正プログラムが適用されたバージョン</li><li>*最高*: 最高バージョン</li><li>*無視*: 依存関係パッケージは使用されません</li></ul>
 
 - **`-FileConflictAction [PromptUser, Overwrite, Ignore]`**
 
@@ -86,7 +86,7 @@ nuget update <configPath> [options]
 
 - **`-Self`**
 
-  最新バージョンに nuget.exe を更新します。その他のすべての引数は無視されます。
+  `nuget.exe`最新バージョンに更新します。 `-Source` 使用できますが、他のすべての引数は無視されます。 ソースが指定されていない場合、は `nuget.org` 設定に関係なく更新を確認し `NuGet.Config` ます。
 
 - **`-Source`**
 

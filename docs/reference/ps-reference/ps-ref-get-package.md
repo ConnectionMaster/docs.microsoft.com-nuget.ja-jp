@@ -1,20 +1,20 @@
 ---
 title: NuGet Get-Package PowerShell リファレンス
 description: Visual Studio の NuGet パッケージマネージャーコンソールで Get-Package PowerShell コマンドのリファレンスです。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 12/07/2017
 ms.topic: reference
-ms.openlocfilehash: 1576e3f20eba1ecdd099b1e7c23aef6b1a1a0a4f
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 7c91faecaac2967c7a01dd81e72b9097e7bd6cae
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237232"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901734"
 ---
 # <a name="get-package-package-manager-console-in-visual-studio"></a>Get-Package (Visual Studio のパッケージマネージャーコンソール)
 
-*このトピックでは、Windows 上の Visual Studio の [パッケージマネージャーコンソール](../../consume-packages/install-use-packages-powershell.md) 内のコマンドについて説明します。汎用 PowerShell Get-Package コマンドについては、 [Powershell PackageManagement のリファレンス](/powershell/module/packagemanagement/?view=powershell-6)を参照してください。*
+*このトピックでは、Windows 上の Visual Studio の [パッケージマネージャーコンソール](../../consume-packages/install-use-packages-powershell.md) 内のコマンドについて説明します。汎用 PowerShell Get-Package コマンドについては、 [Powershell PackageManagement のリファレンス](/powershell/module/packagemanagement)を参照してください。*
 
 ローカルリポジトリにインストールされているパッケージの一覧を取得し、-ListAvailable スイッチで使用した場合はパッケージソースから利用可能なパッケージを一覧表示します。または、-Update スイッチで使用した場合は、使用可能な更新プログラムを一覧表示します。
 
@@ -36,7 +36,7 @@ Get-Package -Source <string> [-ListAvailable] [-Updates] [-ProjectName <string>]
 | ListAvailable | パッケージソースから利用可能なパッケージを一覧表示し、既定で nuget.org を使用します。-PageSize と/または-First が指定されていない限り、既定の50パッケージが表示されます。 |
 | 更新プログラム | パッケージソースから利用可能な更新プログラムが含まれているパッケージを一覧表示します。 |
 | ProjectName | インストールされているパッケージの取得元となるプロジェクト。 省略した場合、ソリューション全体にインストールされているプロジェクトを返します。 |
-| Assert | パッケージ ID、説明、およびタグに適用してパッケージの一覧を絞り込むために使用されるフィルター文字列。 |
+| フィルター | パッケージ ID、説明、およびタグに適用してパッケージの一覧を絞り込むために使用されるフィルター文字列。 |
 | First | リストの先頭から取得するパッケージの数。 指定しない場合、の既定値は50です。 |
 | スキップ | &lt; &gt; 表示されている一覧から最初の int パッケージを除外します。  |
 | AllVersions | 最新バージョンのみではなく、各パッケージの使用可能なすべてのバージョンを表示します。 |

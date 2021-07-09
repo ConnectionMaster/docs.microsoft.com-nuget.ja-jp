@@ -5,12 +5,12 @@ author: JonDouglas
 ms.author: jodou
 ms.date: 08/05/2019
 ms.topic: conceptual
-ms.openlocfilehash: bac4d88c29539f9fbe7b33b44ce11d350920d365
-ms.sourcegitcommit: 650c08f8bc3d48dfd206a111e5e2aaca3001f569
+ms.openlocfilehash: 6cdc826c85f233c7108a53ad244aa8c47df0be67
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/15/2020
-ms.locfileid: "97523523"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901838"
 ---
 # <a name="restore-packages-using-package-restore"></a>[パッケージの復元] を使用したパッケージの復元
 
@@ -181,7 +181,7 @@ msbuild -restore
 
 ## <a name="restore-using-azure-pipelines"></a>Azure Pipelines を使用した復元
 
-Azure Pipelines でビルド定義を作成するとき、定義の中でビルド タスクの前に NuGet [復元](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages)または .NET Core [復元](/azure/devops/pipelines/tasks/build/dotnet-core-cli?view=azure-devops)タスクを含めます。 一部のビルド テンプレートには、既定で復元タスクが含まれています。
+Azure Pipelines でビルド定義を作成するとき、定義の中でビルド タスクの前に NuGet [復元](/azure/devops/pipelines/tasks/package/nuget#restore-nuget-packages)または .NET Core [復元](/azure/devops/pipelines/tasks/build/dotnet-core-cli)タスクを含めます。 一部のビルド テンプレートには、既定で復元タスクが含まれています。
 
 ## <a name="restore-using-azure-devops-server"></a>Azure DevOps Server を使用した復元
 
@@ -244,4 +244,4 @@ MSBuild に統合されたパッケージの復元が使用されるプロジェ
 
 ## <a name="troubleshooting"></a>トラブルシューティング
 
-[パッケージの復元のトラブルシューティング](package-restore-troubleshooting.md)に関するページを参照してください。
+[パッケージの復元のトラブルシューティング](Package-restore-troubleshooting.md)に関するページを参照してください。

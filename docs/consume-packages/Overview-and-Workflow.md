@@ -1,16 +1,16 @@
 ---
 title: NuGet パッケージの使用の概要とワークフロー
 description: プロジェクトで NuGet パッケージを利用する場合のプロセスの概要と、プロセスの他の特定の部分へのリンク。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 03/22/2018
 ms.topic: conceptual
-ms.openlocfilehash: ddd1d163e18ed4ce1e7cbf41ed152acc40c1c423
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: d1d6df3bcc36d8a78fcee97099b301c9ffc440d9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "79428517"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323636"
 ---
 # <a name="package-consumption-workflow"></a>パッケージ利用のワークフロー
 
@@ -39,15 +39,15 @@ NuGet では、インストールされている各パッケージの ID とバ�
 
 場合によっては、プロジェクトに既に含まれているパッケージの再インストールが必要になります。その場合、依存関係も再インストールされる可能性があります。 これは、`nuget reinstall` コマンド使用するか、NuGet パッケージ マネージャー コンソールを使用して簡単に行うことができます。 詳細については、「[Reinstalling and Updating Packages](../consume-packages/reinstalling-and-updating-packages.md)」 (パッケージの再インストールと更新) を参照してください。
 
-最後に、NuGet の動作は `Nuget.Config` ファイルによって駆動されます。 「[Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)」 (NuGet の動作の構成) で説明されているように、複数のファイルを使用して、さまざまなレベルの特定の設定を一元化することができます。
+最後に、NuGet の動作は `NuGet.Config` ファイルによって駆動されます。 「[Configuring NuGet Behavior](../consume-packages/configuring-nuget-behavior.md)」 (NuGet の動作の構成) で説明されているように、複数のファイルを使用して、さまざまなレベルの特定の設定を一元化することができます。
 
 ## <a name="ways-to-install-a-nuget-package"></a>NuGet パッケージのインストール方法
 
 NuGet パッケージは、次の表にあるメソッドのいずれかを使用して、ダウンロードされ、インストールされます。
 
-| ツール | 説明 |
-| --- | --- |
-| [dotnet.exe CLI](install-use-packages-dotnet-cli.md) | (すべてのプラットフォーム) .NET Core と .NET Standard ライブラリ、および .NET Framework を対象とする SDK スタイルのプロジェクト (「[SDK 属性](/dotnet/core/tools/csproj#additions)」を参照) のための CLI ツール。 \<package_name\> によって指定されたパッケージを取得し、参照をプロジェクト ファイルに追加します。 また、依存関係も取得してインストールします。 |
-| Visual Studio | (Windows および Mac) 用意された UI を使用して、指定したパッケージ ソースからパッケージとその依存関係を参照して選択し、プロジェクトにインストールできます。 インストールされたプロジェクトへの参照をプロジェクト ファイルに追加します。<ul><li>[Visual Studio を使用してパッケージをインストールして管理する](install-use-packages-visual-studio.md)</li><li>[プロジェクトに NuGet パッケージを含める (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
-| [パッケージ マネージャー コンソール (Visual Studio)](install-use-packages-powershell.md) | (Windows のみ) 選択したソースから、\<package_name\> で指定したパッケージを取得して、ソリューションで指定されたプロジェクトにインストールし、参照をプロジェクト ファイルに追加します。 また、依存関係も取得してインストールします。 |
-| [nuget.exe CLI](install-use-packages-nuget-cli.md) | (すべてのプラットフォーム) .NET Framework ライブラリと、.NET Standard ライブラリを対象とする非 SDK スタイルのプロジェクトのための CLI ツール。 \<package_name\> で指定したパッケージを取得して、その内容を現在のディレクトリのフォルダーに展開します。`packages.config` ファイルでリストされたすべてのパッケージを取得することもできます。 また、依存関係を取得してインストールしますが、プロジェクト ファイルまたは `packages.config` は変更されません。 |
+| ツール | プラットフォーム | 説明 |
+| --- | --- | --- |
+| [dotnet CLI](install-use-packages-dotnet-cli.md) | すべて | .NET Core と .NET Standard ライブラリ、および .NET Framework を対象とする SDK スタイルのプロジェクト (「[SDK 属性](/dotnet/core/tools/csproj#additions)」を参照) のための CLI ツール。 \<package_name\> によって指定されたパッケージを取得し、参照をプロジェクト ファイルに追加します。 また、依存関係も取得してインストールします。 |
+| Visual Studio | Windows と Mac | 用意された UI を使用して、指定したパッケージ ソースからパッケージとその依存関係を参照して選択し、プロジェクトにインストールできます。 インストールされたプロジェクトへの参照をプロジェクト ファイルに追加します。<ul><li>[Visual Studio を使用してパッケージをインストールして管理する](install-use-packages-visual-studio.md)</li><li>[プロジェクトに NuGet パッケージを含める (Mac)](/visualstudio/mac/nuget-walkthrough)</li></ul> |
+| [パッケージ マネージャー コンソール (Visual Studio)](install-use-packages-powershell.md) | Windows のみ | 選択したソースから、\<package_name\> で指定したパッケージを取得して、ソリューションで指定されたプロジェクトにインストールし、参照をプロジェクト ファイルに追加します。 また、依存関係も取得してインストールします。 |
+| [nuget.exe CLI](install-use-packages-nuget-cli.md) | すべて | .NET Framework ライブラリと、.NET Standard ライブラリを対象とする非 SDK スタイルのプロジェクトのための CLI ツール。 \<package_name\> で指定したパッケージを取得して、その内容を現在のディレクトリのフォルダーに展開します。`packages.config` ファイルでリストされたすべてのパッケージを取得することもできます。 また、依存関係を取得してインストールしますが、プロジェクト ファイルまたは `packages.config` は変更されません。 |

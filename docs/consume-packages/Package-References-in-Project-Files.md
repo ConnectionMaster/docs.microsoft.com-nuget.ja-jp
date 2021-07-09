@@ -1,20 +1,20 @@
 ---
 title: NuGet PackageReference 形式 (プロジェクト ファイルのパッケージ参照)
 description: NuGet 4.0 以降と VS2017 および .NET Core 2.0 でサポートされているプロジェクト ファイルの NuGet PackageReference に関する詳細
-author: karann-msft
-ms.author: karann
+author: nkolev92
+ms.author: nikolev
 ms.date: 03/16/2018
 ms.topic: conceptual
-ms.openlocfilehash: 1127e7aee27d57abd5f14dd3bea82dfff3ba6d93
-ms.sourcegitcommit: 53b06e27bcfef03500a69548ba2db069b55837f1
+ms.openlocfilehash: c7b963352e0e9640844a213767a58c883ed0eeb9
+ms.sourcegitcommit: f3d98c23408a4a1c01ea92fc45493fa7bd97c3ee
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 12/19/2020
-ms.locfileid: "97699788"
+ms.lasthandoff: 06/17/2021
+ms.locfileid: "112323714"
 ---
-# <a name="package-references-packagereference-in-project-files"></a>プロジェクト ファイルのパッケージ参照 (PackageReference)
+# <a name="package-references-packagereference-in-project-files"></a>プロジェクト ファイルのパッケージ参照 (`PackageReference`)
 
-`PackageReference` ノードを使用するパッケージ参照では、(個別の `packages.config` ファイルとは異なり) NuGet の依存関係をプロジェクト ファイル内で直接管理します。 PackageReference を使用する場合、呼び出されても、NuGet の他の側面には影響を与えません。たとえば、(パッケージ ソースを含む) `NuGet.config` ファイルの設定が、「[NuGet の動作を構成する](configuring-nuget-behavior.md)」で説明されているように引き続き適用されます。
+`PackageReference` ノードを使用するパッケージ参照では、(個別の `packages.config` ファイルとは異なり) NuGet の依存関係をプロジェクト ファイル内で直接管理します。 PackageReference を使用する場合、呼び出されても、NuGet の他の側面には影響を与えません。たとえば、(パッケージ ソースを含む) `NuGet.Config` ファイルの設定が、「[NuGet の動作を構成する](configuring-nuget-behavior.md)」で説明されているように引き続き適用されます。
 
 PackageReference の場合、MSBuild 条件を使用し、ターゲット フレームワークまたはその他のグループ化ごとにパッケージ参照を選択することもできます。 依存関係とコンテンツ フローを細かく制御することもできます。 (詳細については、「[NuGet pack and restore as MSBuild targets](../reference/msbuild-targets.md)」(MSBuild ターゲットとしての NuGet のパックと復元) を参照してください)。
 
@@ -211,7 +211,7 @@ MSBuild のプロパティとパッケージ ID には同じ制限がないた�
 まれに、異なるパッケージに同じ名前空間のクラスが含まれている場合があります。 NuGet 5.7 および Visual Studio 2019 Update 7 以降、ProjectReference と同等の PackageReference は [`Aliases`](/dotnet/api/microsoft.codeanalysis.projectreference.aliases) をサポートしています。
 既定では、別名は用意されていません。 別名が指定されている場合、注釈付きパッケージに由来する "*すべての*" アセンブリは、別名で参照する必要があります。
 
-サンプルの使用方法については、[NuGet\Samples](https://github.com/NuGet/Samples/tree/master/PackageReferenceAliasesExample) を参照してください。
+サンプルの使用方法については、[NuGet\Samples](https://github.com/NuGet/Samples/tree/main/PackageReferenceAliasesExample) を参照してください。
 
 プロジェクト ファイルで、次のように別名を指定します。
 
@@ -390,3 +390,34 @@ ProjectA
 | `-LockedMode` | `--locked-mode` | RestoreLockedMode | 復元のロック モードを有効にします。 これは、繰り返し可能なビルドを必要とする CI/CD のシナリオで役立ちます。|   
 | `-ForceEvaluate` | `--force-evaluate` | RestoreForceEvaluate | このオプションは、プロジェクトで定義する浮動バージョンを使用するパッケージで役立ちます。 既定では、NuGet の復元では、このオプションを指定して復元を実行しない限り、復元ごとのパッケージ バージョンの自動更新は行われません。 |
 | `-LockFilePath` | `--lock-file-path` | NuGetLockFilePath | プロジェクトのカスタム ロック ファイルの場所を定義します。 既定では、NuGet はルート ディレクトリでの `packages.lock.json` をサポートします。 同じディレクトリ内に複数のプロジェクトがある場合、NuGet はプロジェクト固有のロック ファイル `packages.<project_name>.lock.json` をサポートします。 |
+
+## <a name="assettargetfallback"></a>AssetTargetFallback
+
+`AssetTargetFallback` プロパティを使用すると、プロジェクトから参照されるプロジェクトの互換性のある追加のフレームワーク バージョンと、プロジェクトに使用する NuGet パッケージを指定できます。
+
+`PackageReference` を使用してパッケージの依存関係を指定し、そのパッケージにプロジェクトのターゲット フレームワークと互換性のある資産が含まれない場合は、`AssetTargetFallback` プロパティが機能します。 参照されたパッケージの互換性は、`AssetTargetFallback` で指定された各ターゲット フレームワークを使用して再確認されます。
+`project` または `package` が `AssetTargetFallback` によって参照されている場合、[NU1701](../reference/errors-and-warnings/NU1701.md) 警告が表示されます。
+
+`AssetTargetFallback` が互換性に与える影響の例については、次の表を参照してください。
+
+| プロジェクト フレームワーク | AssetTargetFallback | パッケージ フレームワーク | 結果 |
+|-------------------|---------------------|--------------------|--------|
+| .NET Framework 4.7.2 | | .NET Standard 2.0 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Standard 2.0、.NET Framework 4.7.2 | .NET Standard 2.0 |
+| .NET Core App 3.1 | | .NET Framework 4.7.2 | 互換性がありません。[`NU1202`](../reference/errors-and-warnings/NU1202.md) で失敗します |
+| .NET Core App 3.1 | net472;net471 | .NET Framework 4.7.2 | .NET Framework 4.7.2。[`NU1701`](../reference/errors-and-warnings/NU1701.md) が表示されます |
+
+`;` を区切り記号として使用して、複数のフレームワークを指定できます。 フォールバック フレームワークを追加するには、次の操作を行います。
+
+```xml
+<AssetTargetFallback Condition=" '$(TargetFramework)'=='netcoreapp3.1' ">
+    $(AssetTargetFallback);net472;net471
+</AssetTargetFallback>
+```
+
+既存の `AssetTargetFallback` 値に追加するのではなく、上書きする場合は、`$(AssetTargetFallback)` は省略できます。
+
+> [!NOTE]
+> [.NET SDK ベースのプロジェクト](/dotnet/core/sdk)を使用している場合は、適切な `$(AssetTargetFallback)` 値が構成されるため、手動で設定する必要はありません。
+>
+> `$(PackageTargetFallback)` は、この課題に対処しようとした初期の機能でしたが、根本的には破損しているため、使用 "*しないでください*"。 `$(PackageTargetFallback)` から `$(AssetTargetFallback)` に移行するには、プロパティ名を変更するだけです。

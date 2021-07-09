@@ -1,16 +1,16 @@
 ---
 title: dotnet CLI を使用して NuGet パッケージをインストールし、使用する
 description: .NET Core プロジェクトで NuGet パッケージをインストールし、使用するプロセスを説明したチュートリアル。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/23/2018
 ms.topic: quickstart
-ms.openlocfilehash: 006fff8360ac62393e4b88c1a253514591d22f4c
-ms.sourcegitcommit: 2b50c450cca521681a384aa466ab666679a40213
+ms.openlocfilehash: dbe1d3ee8e50a90803140bc2c5cb5821b485a2fd
+ms.sourcegitcommit: bb9560dcc7055bde84b4940c5eb0db402bf46a48
 ms.translationtype: HT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 04/07/2020
-ms.locfileid: "78231278"
+ms.lasthandoff: 03/23/2021
+ms.locfileid: "104859435"
 ---
 # <a name="quickstart-install-and-use-a-package-using-the-dotnet-cli"></a>クイック スタート: dotnet CLI を使用してパッケージをインストールし使用する
 
@@ -52,9 +52,9 @@ NuGet パッケージは、ある種類の .NET プロジェクトにインス�
 2. コマンドが完了したら、`.csproj` ファイルを開いて、追加された参照を確認します。
 
     ```xml
-   <ItemGroup>
-    <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
-   </ItemGroup>
+    <ItemGroup>
+      <PackageReference Include="Newtonsoft.Json" Version="12.0.1" />
+    </ItemGroup>
     ```
 
 ## <a name="use-the-newtonsoftjson-api-in-the-app"></a>アプリで Newtonsoft.Json API を使用する

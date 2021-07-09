@@ -1,20 +1,20 @@
 ---
 title: NuGet Uninstall-Package PowerShell リファレンス
 description: Visual Studio の NuGet パッケージマネージャーコンソールで Uninstall-Package PowerShell コマンドのリファレンスです。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 06/01/2017
 ms.topic: reference
-ms.openlocfilehash: d164176355e32e5bbe0a017fc2b291cbc9ef326a
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 371e95c341efbce1c4a15facefc15cd51b266141
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93237128"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901786"
 ---
 # <a name="uninstall-package-package-manager-console-in-visual-studio"></a>Uninstall-Package (Visual Studio のパッケージマネージャーコンソール)
 
-*このトピックでは、Windows 上の Visual Studio の [パッケージマネージャーコンソール](../../consume-packages/install-use-packages-powershell.md) 内のコマンドについて説明します。汎用 PowerShell Uninstall-Package コマンドについては、 [Powershell PackageManagement のリファレンス](/powershell/module/packagemanagement/?view=powershell-6)を参照してください。*
+*このトピックでは、Windows 上の Visual Studio の [パッケージマネージャーコンソール](../../consume-packages/install-use-packages-powershell.md) 内のコマンドについて説明します。汎用 PowerShell Uninstall-Package コマンドについては、 [Powershell PackageManagement のリファレンス](/powershell/module/packagemanagement)を参照してください。*
 
 プロジェクトからパッケージを削除し、必要に応じて依存関係を削除します。 他のパッケージがこのパッケージに依存している場合、–Force オプションを指定しない限り、コマンドは失敗します。
 

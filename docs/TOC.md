@@ -35,9 +35,10 @@
 ## [パッケージの作成 (dotnet CLI)](create-packages/creating-a-package-dotnet-cli.md)
 ## [パッケージの作成 (nuget.exe CLI)](create-packages/creating-a-package.md)
 ## [パッケージの作成 (MSBuild)](create-packages/creating-a-package-msbuild.md)
-## [プロジェクト ファイルで複数のターゲット フレームワークをサポートする](create-packages/multiple-target-frameworks-project-file.md)
+## [パッケージ作成のベスト プラクティス](create-packages/Package-authoring-best-practices.md)
 ## [プレリリース パッケージをビルドする](create-packages/prerelease-packages.md)
 ## [シンボル パッケージを作成する](create-packages/symbol-packages-snupkg.md)
+## [プロジェクト ファイルで複数のターゲット フレームワークをサポートする](create-packages/multiple-target-frameworks-project-file.md)
 ## 高度なタスク
 ### [複数のターゲット フレームワークのサポート](create-packages/supporting-multiple-target-frameworks.md)
 ### [ソース コードと config ファイルを変更する](create-packages/source-and-config-file-transformations.md)
@@ -68,6 +69,8 @@
 ## [パッケージのインストール プロセス](concepts/package-installation-process.md)
 ## [パッケージのバージョン管理](concepts/package-versioning.md)
 ## [依存関係の解決](concepts/dependency-resolution.md)
+## [セキュリティで保護されたソフトウェア サプライ チェーンのベスト プラクティス](concepts/Security-Best-Practices.md)
+## [インストールされているパッケージのトラブルシューティング](concepts/troubleshooting-installed-packages.md)
 # 関連項目
 ## [.nuspec](reference/nuspec.md)
 ## [nuget.config ファイル](reference/nuget-config-file.md)
@@ -289,6 +292,8 @@
 ## リリース ノート
 ### [既知の問題](release-notes/known-issues.md)
 ### NuGet 5.x
+#### [NuGet 5.10](release-notes/NuGet-5.10.md)
+#### [NuGet 5.9](release-notes/NuGet-5.9.md)
 #### [NuGet 5.8](release-notes/NuGet-5.8.md)
 #### [NuGet 5.7](release-notes/NuGet-5.7.md)
 #### [NuGet 5.6](release-notes/NuGet-5.6.md)
@@ -360,6 +365,6 @@
 #### [NuGet 1.3](release-notes/NuGet-1.3.md)
 #### [NuGet 1.2](release-notes/NuGet-1.2.md)
 #### [NuGet 1.1](release-notes/NuGet-1.1.md)
-## [よく寄せられる質問](resources/nuget-faq.md)
+## [よく寄せられる質問](resources/nuget-faq.yml)
 ## [プロジェクトの形式](resources/check-project-format.md)
 # [NuGet.org](nuget-org/overview-nuget-org.md)

@@ -1,16 +1,16 @@
 ---
 title: NuGet PowerShell リファレンス
 description: Visual Studio の NuGet パッケージマネージャーコンソールで使用できる PowerShell コマンドの完全なリファレンスです。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 10/02/2017
 ms.topic: reference
-ms.openlocfilehash: 4f8b42847cbc155393fe6d2afbe2e0857b619da3
-ms.sourcegitcommit: b138bc1d49fbf13b63d975c581a53be4283b7ebf
+ms.openlocfilehash: 7bc0395a98e75fe006e048b91d84cb5c17220161
+ms.sourcegitcommit: 40c039ace0330dd9e68922882017f9878f4283d1
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 11/03/2020
-ms.locfileid: "93236881"
+ms.lasthandoff: 04/22/2021
+ms.locfileid: "107901890"
 ---
 # <a name="powershell-reference"></a>PowerShell リファレンス
 
@@ -20,7 +20,7 @@ ms.locfileid: "93236881"
 > すべての PowerShell コマンドは、パッケージの使用のみに関連しています。 パッケージが他のパッケージのコンシューマーでもある場合を除き、パッケージの作成と公開に関連する PowerShell コマンドはありません。
 
 > [!Important]
-> ここに記載されているコマンドは、Visual Studio のパッケージマネージャーコンソールに固有のものであり、一般的な PowerShell 環境で使用できる [Package Management モジュールコマンド](/powershell/module/packagemanagement/?view=powershell-6) とは異なります。 具体的には、各環境には、他の環境では使用できないコマンドがあり、同じ名前のコマンドが特定の引数で異なる場合もあります。 Visual Studio で Package Management コンソールを使用する場合は、このトピックに記載されているコマンドと引数が適用されます。
+> ここに記載トされているコマンドは、Visual Studio のパッケージ マネージャー コンソールに固有のものであり、一般的な PowerShell 環境で使用できる[Package Management モジュール コマンド](/powershell/module/packagemanagement)とは異なります。 具体的には、各環境には他の環境では使用できないコマンドがあり、同じ名前のコマンドでも特定の引数が異なる場合があります。 Visual Studio で Package Management コンソールを使用する場合、このトピックに記載されているコマンドと引数が適用されます。
 
 | 一般的なコマンド | 説明 | NuGet のバージョン |
 | --- | --- | --- |

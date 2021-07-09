@@ -1,16 +1,16 @@
 ---
 title: NuGet クライアント SDK
 description: API は進化していますが、まだ文書化されていませんが、例については Dave Glick のブログを参照してください。
-author: karann-msft
-ms.author: karann
+author: JonDouglas
+ms.author: jodou
 ms.date: 01/09/2018
 ms.topic: conceptual
-ms.openlocfilehash: 0eca8478b4d6509dbc1407560d2c86069c7575dd
-ms.sourcegitcommit: 323a107c345c7cb4e344a6e6d8de42c63c5188b7
+ms.openlocfilehash: 6417c971dc13cf9ed05dcec4e4156af94c0ea058
+ms.sourcegitcommit: c8bf16420f235fc3e42c08cd0d56359e91d490e5
 ms.translationtype: MT
 ms.contentlocale: ja-JP
-ms.lasthandoff: 01/15/2021
-ms.locfileid: "98235738"
+ms.lasthandoff: 04/14/2021
+ms.locfileid: "107387388"
 ---
 # <a name="nuget-client-sdk"></a>NuGet クライアント SDK
 
@@ -20,7 +20,7 @@ ms.locfileid: "98235738"
 * [`NuGet.Packaging`](https://www.nuget.org/packages/NuGet.Packaging) -NuGet パッケージとの対話に使用されます。 `NuGet.Protocol` このパッケージに依存
 
 これらのパッケージのソースコードは、 [nuget/nuget. Client](https://github.com/NuGet/NuGet.Client) GitHub リポジトリで確認できます。
-これらの例のソースコードについては、GitHub の [サンプル](https://github.com/NuGet/Samples/tree/master/NuGetProtocolSamples) プロジェクトを参照してください。
+これらの例のソースコードについては、GitHub の [サンプル](https://github.com/NuGet/Samples/tree/main/NuGetProtocolSamples) プロジェクトを参照してください。
 
 > [!Note]
 > NuGet サーバープロトコルに関するドキュメントについては、 [Nuget サーバー API](~/api/overview.md)に関するドキュメントを参照してください。
@@ -32,6 +32,9 @@ ms.locfileid: "98235738"
 ```ps1
 dotnet add package NuGet.Protocol
 ```
+
+> [!Tip]
+> `Repository.Factory` は名前空間で定義され、 `NuGet.Protocol.Core.Types` `GetCoreV3` メソッドは名前空間で定義された拡張メソッドです `NuGet.Protocol` 。 したがって、 `using` 両方の名前空間にステートメントを追加する必要があります。
 
 ### <a name="list-package-versions"></a>パッケージのバージョンを一覧表示する
 
